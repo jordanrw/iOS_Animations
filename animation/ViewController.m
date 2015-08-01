@@ -28,8 +28,17 @@
 #pragma mark - animations
 - (IBAction)animateButton:(UIButton *)sender {
     NSLog(@"hi");
+    
+    [self.view addSubview:[self createUIView]];
 }
 
+- (UIView*)createUIView {
+    //UIView *view = [UIView alloc]initWithFrame:CGRectMake(self.view.center), CGRectMake(self.view.center), 50, 50;
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(120, 120, 50.0, 50.0)];
+    view.backgroundColor = [UIColor redColor];
+    
+    return view;
+}
 
 
 @end
