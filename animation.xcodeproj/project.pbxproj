@@ -416,6 +416,7 @@
 				17CB63E91B6D56EE00D5213D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17CB63EA1B6D56EE00D5213D /* Build configuration list for PBXNativeTarget "animationTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +425,7 @@
 				17CB63EC1B6D56EE00D5213D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

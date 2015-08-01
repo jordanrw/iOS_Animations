@@ -10,13 +10,19 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *LoginView;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+
+
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _LoginView.alpha = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +30,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-#pragma mark - animations
-- (IBAction)animateButton:(UIButton *)sender {
-    NSLog(@"hi");
-    
-    [self.view addSubview:[self createUIView]];
+#pragma mark - animation StoryboardView
+- (IBAction)xButton:(UIButton *)sender {
+    self.LoginView.alpha = 0;
 }
 
+- (IBAction)loginButton:(UIButton *)sender {
+    NSLog(@"go to the next screen");
+}
+
+
+
+#pragma mark - the Button
+- (IBAction)animateButton:(UIButton *)sender {
+    //Storyboard View
+    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        _LoginView.alpha = 1.0;
+    } completion:NULL];
+    
+    
+    
+    //PROGRAMMATIC VIEW
+//    UIView *view = [self createUIView];
+//    [self.view addSubview:view];
+}
+
+
+#pragma mark - animations with program view
 - (UIView*)createUIView {
 
     //CGPoint cp = self.view.center;
@@ -61,6 +86,13 @@
     passwordField.placeholder = @"password";
     [view addSubview:passwordField];
     
+    
+    //animation
+    view.alpha = 0.0;
+    
+    [UIView animateWithDuration:0.7 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        view.alpha = 1.0;
+    } completion:NULL];
     
     return view;
 }
